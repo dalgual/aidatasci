@@ -1,5 +1,5 @@
 def azureml_main(frame1):
-## import libraries
+    ## import libraries
     import matplotlib
     matplotlib.use('agg')  # Set backend
     
@@ -8,10 +8,10 @@ def azureml_main(frame1):
     import matplotlib.pyplot as plt
     import numpy as np
  
-## Create a pair-wise scatter plot    
+    ## Create a pair-wise scatter plot    
     fig1 = plt.figure(1, figsize=(10, 10))
     ax = fig1.gca()
-    sm = scatter_matrix(frme1, alpha=0.3, 
+    sm = scatter_matrix(frame1, alpha=0.3, 
                    diagonal='kde', ax = ax)
                    
     #Change label rotation: Jwoo
@@ -25,7 +25,7 @@ def azureml_main(frame1):
     plt.show()
     fig1.savefig('scatter1.png')
 
-## Create conditioned scatter plots.    
+    ## Create conditioned scatter plots.
     col_list = ["Relative Compactness",
                "Surface Area",
                "Wall Area",
@@ -57,7 +57,7 @@ def azureml_main(frame1):
             
             fig.savefig('scatter' + col + '.png')
  
-## Histograms of Heating Load by Overall Height
+    ## Histograms of Heating Load by Overall Height
     col_list = ["Relative Compactness",
                "Surface Area",
                "Wall Area",
@@ -85,7 +85,7 @@ def azureml_main(frame1):
         fig.savefig('hists_' + col + '.png')
    
 
-## Creat boxplots.    
+    ## Creat boxplots.    
     for col in col_list:
         if(frame1[col].dtype in [np.int64, np.int32, np.float64]):                  
             fig = plt.figure(figsize = (6,6))
@@ -95,6 +95,6 @@ def azureml_main(frame1):
             ax.set_xlabel('')
             fig.savefig('box_' + col + '.png')
 
-## Return the data frame
+    ## Return the data frame
     return frame1
 
