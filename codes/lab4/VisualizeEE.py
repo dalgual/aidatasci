@@ -13,7 +13,7 @@ def azureml_main(frame1):
  
 ## Create a pair-wise scatter plot    
 ## ref: http://matplotlib.org/users/pyplot_tutorial.html
-    Azure = False  
+    Azure = True  
     ## If in Azure, frame1 is passed to function
     if(Azure == False):
         frame1 = eeframe
